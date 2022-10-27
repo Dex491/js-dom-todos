@@ -11,3 +11,8 @@ body {
   text-decoration: line-through;
   color:grey;
 }
+
+li input {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
