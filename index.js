@@ -13,11 +13,20 @@ function renderToDo() {
     const complete = document.createElement('input')
     complete.setAttribute('type', 'checkbox')
     complete.addEventListener('click', (event) => {
-      console.log('hello')
+      console.log('checkbox clicked')
+      // if (state.tasks["completed"] === true) {
+      //   console.log('true')
+      // } else if (state.tasks["completed"] === false) {
+      //   console.log('false')
+      // }
+      if(event.target.click) {
+        checkCompleted()
+      }
     })
 
-    li.appendChild(complete)
+    
 
+    li.appendChild(complete)
     tasksUL.appendChild(li)
   })
 }
@@ -33,6 +42,14 @@ function loadToDo() {
       state.tasks = task
       renderToDo()
     })
+}
+
+function checkCompleted() {
+  if (state.tasks['completed'] === true) {
+    console.log('true')
+  } else if (state.tasks['completed'] === false) {
+    console.log('false')
+  }
 }
 
 loadToDo()
